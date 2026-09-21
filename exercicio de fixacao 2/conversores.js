@@ -1,14 +1,14 @@
 class Conversor {
     celsiusParaFahrenheit(celsius) {
-        return F = (9 / 5) * C + 32
+        return (9 / 5) * celsius + 32; 
     }
     quilometrosParaMilhas(km){
-        return milhas = km * 0.621371
+        return km * 0.621371; 
     }
     minutosParaHoras(minutos){
-        return horas = minutos / 60
+        return minutos / 60; 
     }
-   
 }
 
-module.export = Conversor;
+
+module.exports = Conversor; 
