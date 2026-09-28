@@ -1,0 +1,39 @@
+Respostas teóricas
+
+1. Qual a diferença entre módulo e classe?
+Um módulo organiza e disponibiliza código para outros arquivos. Uma classe serve como modelo para criar objetos e definir seus atributos e métodos.
+
+2. Por que utilizar encapsulamento?
+Para proteger os atributos internos dos objetos e controlar como eles podem ser acessados ou modificados.
+
+3. Qual a vantagem de reutilizar funções em uma biblioteca?
+Evita duplicação de código e permite que a mesma função seja utilizada em diferentes partes do sistema.
+
+4. Para que serve super?
+Serve para acessar métodos e o construtor da classe pai.
+
+por exemplo nesse exercício:
+
+super.setEmail(email);
+chama o setEmail() definido em Pessoa.
+
+5. Qual a diferença entre herança e sobrescrita?
+Herança permite que uma classe filha reutilize características de uma classe pai.
+Sobrescrita acontece quando a classe filha cria sua própria implementação de um método que já existe na classe pai.
+
+6. Por que a validação do e-mail deve ocorrer dentro de setEmail() utilizando a biblioteca?
+Porque o setEmail() é responsável por controlar a alteração do atributo privado #email, enquanto a biblioteca fica responsável somente pela regra de validação.
+
+por exemplo:
+Biblioteca → verifica se é válido
+setEmail() → decide se altera o atributo
+
+7. Em quais situações utilizar && e ||?
+&& significa E. Todas as condições precisam ser verdadeiras.
+idade >= 18 && possuiDocumento
+|| significa OU. Pelo menos uma condição precisa ser verdadeira.
+email.endsWith(".com") || email.endsWith(".edu.br")
+Neste exercício, a validação do e-mail usa exatamente essa lógica:
+email.includes("@") &&
+(email.endsWith(".com") || email.endsWith(".edu.br"))
+Portanto, o e-mail precisa conter @ e terminar em .com ou .edu.br.
