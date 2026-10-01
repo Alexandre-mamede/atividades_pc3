@@ -1,0 +1,37 @@
+ Respostas para as Questões Teóricas
+ 
+1. Qual a vantagem de fazer PJ herdar da classe Pessoa?
+Permite a reutilização de código de forma limpa, evitando a duplicação de comportamentos e propriedades compartilhadas (como nome e email), facilitando futuras manutenções na aplicação.
+
+2. Por que não devemos copiar para PJ os métodos já implementados em Pessoa?
+Porque violaria o princípio de design DRY (Don't Repeat Yourself). Se regras do setNome mudarem, você teria que corrigir em múltiplos locais, aumentando as chances de bugs.
+
+3. Qual a finalidade do operador instanceof no método setPJ()?
+Garantir a consistência e segurança de tipos (Type Safety). Ele verifica se o objeto passado possui em sua cadeia de protótipos a classe PJ, impedindo que estruturas corrompidas ou objetos literais comuns quebrem o comportamento do sistema.
+
+4. Qual a diferença entre if (pj) e if (pj instanceof PJ)?
+O if (pj) apenas testa se a variável é truthy (se ela não é nula, indefinida, falsa, zero, etc.). Já o if (pj instanceof PJ) certifica de forma precisa que ela é um objeto válido construído a partir do modelo específico de PJ.
+
+5. Qual a diferença entre a classe IEclss e a função fábrica IEfunc()?
+A classe IEclss funciona como um molde estrutural utilizando a palavra-chave class e requer o operador new para instanciar novos objetos através de seu construtor. A função fábrica IEfunc() é uma função regular que retorna um novo objeto sob demanda a cada invocação, sem o uso de new.
+
+6. Como a função fábrica protege seus dados internos?
+Através de Closures (fechamentos). As variáveis internas (numeroIE, estadoIE, etc.) são declaradas dentro do escopo da função fábrica e só podem ser lidas ou modificadas pelas funções retornadas que mantiveram a referência para esse escopo original.
+
+7. Qual a diferença entre o objeto literal IEjson e um documento JSON?
+O objeto literal IEjson é uma estrutura viva de dados em JavaScript na memória, contendo referências, lógica, variáveis e métodos (funções). Um documento JSON é estritamente uma string textual padronizada usada exclusivamente para troca/transmissão de dados textuais e que não aceita funções/métodos.
+
+8. Qual a diferença entre exportação padrão e exportação nomeada?
+A exportação padrão (export default) permite exportar apenas uma única entidade por arquivo, e ela pode ser importada com qualquer nome sem o uso de chaves {}. As nomeadas (export { a, b }) exportam múltiplos elementos obrigando o importador a usar os nomes exatos encapsulados por chaves.
+
+9. Por que IEclss utiliza new, enquanto IEfunc() não utiliza?
+Porque IEclss é uma classe que implementa o mecanismo de protótipos nativo do JavaScript moderno; o operador new aloca um novo objeto na memória, associa seu this e invoca o método constructor. IEfunc() já faz a criação interna do objeto e o devolve pronto através de um return explícito.
+
+10. Qual a vantagem de organizar as classes e estruturas em arquivos separados?
+Melhora expressivamente a modularidade, legibilidade, facilidade de testes automatizados e o trabalho em equipe, já que cada arquivo possui uma responsabilidade única delimitada.
+
+11. Como o relacionamento entre IE e PJ é representado no código?
+Através de uma Associação de Objetos. Onde o atributo privado #pj (na classe/factory) ou a propriedade pj (no objeto literal) guarda como valor uma referência direta para a instância gerada do objeto PJ.
+
+12. Por que instanceof Date pode ser utilizado mesmo sem termos criado a classe Date?
+Porque a classe Date faz parte dos objetos globais nativos da especificação Built-in do JavaScript Runtime, estando automaticamente disponível no ambiente (Node.js ou Navegadores).
