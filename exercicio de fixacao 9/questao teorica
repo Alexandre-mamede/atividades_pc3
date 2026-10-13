@@ -1,0 +1,41 @@
+1. Qual a vantagem de consultar diretamente a API antes de modificar a classe?
+
+Permite conhecer os dados realmente retornados, 
+identificar os atributos disponíveis e verificar seus nomes e formatos 
+antes de implementar mudanças.
+
+2. Por que os novos dados devem ser armazenados em atributos privados?
+
+Para proteger o estado interno do objeto e controlar o acesso aos seus 
+dados por meio de métodos definidos pela classe.
+
+3. Qual a finalidade dos métodos get adicionados à classe?
+
+Permitir a leitura dos atributos privados sem expô-los diretamente.
+
+4. Por que não devemos acessar diretamente os atributos retornados pela API fora de setCep()?
+
+Porque dados é uma variável local do método setCep(). Fora dele, 
+os dados devem ser acessados pelo estado armazenado na classe, utilizando seus getters.
+
+5. Qual a diferença entre o nome de uma propriedade da API e o nome de um atributo da classe?
+
+A propriedade da API é definida pelo serviço externo, 
+enquanto o atributo da classe é definido pelo programador para representar os dados no sistema.
+
+6. Por que a classe não precisa utilizar obrigatoriamente os mesmos nomes adotados pelo ViaCEP?
+
+Porque ela pode adotar nomes que façam mais sentido para a 
+aplicação, realizando o mapeamento entre a resposta da API e seus atributos.
+
+7. O que aconteceria se a API adicionasse novos campos no futuro?
+
+Os campos novos poderiam ser ignorados pela classe até que o 
+programador decidisse utilizá-los. A inclusão de campos, por si só, 
+não exige que todos sejam armazenados.
+
+8. Por que o tratamento com try/catch deve continuar funcionando mesmo após a inclusão de novos atributos?
+
+Porque erros de rede, respostas inválidas e CEPs inexistentes 
+continuam sendo possíveis. O tratamento de exceções permite comunicar 
+essas falhas sem executar a apresentação de um endereço que não foi consultado com sucesso.
